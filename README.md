@@ -1,21 +1,21 @@
 # 购物系统
 
 #### 介绍
-课堂demo
+软工作业
 
 #### 软件架构
 软件架构说明
-
+ssm
 
 #### 安装教程
 
-1.  xxxx
+1.  VScode下的maven 
 2.  xxxx
 3.  xxxx
 
 #### 使用说明
 
-1.  xxxx
+1.  随便使用
 2.  xxxx
 3.  xxxx
 
