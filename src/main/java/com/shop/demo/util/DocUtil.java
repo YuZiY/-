@@ -12,7 +12,7 @@ import com.power.doc.model.ApiErrorCode;
 public class DocUtil {
     private static void createDoc() {
         ApiConfig config = new ApiConfig();
-        config.setServerUrl("http://localhost:8080");
+        config.setServerUrl("http://10.9.5.133");
         // 当把AllInOne设置为true时，Smart-doc将会把所有接口生成到一个Markdown、HHTML或者AsciiDoc中
         config.setAllInOne(true);
 
@@ -22,7 +22,6 @@ public class DocUtil {
 
         // 设置接口包扫描路径过滤，如果不配置则Smart-doc默认扫描所有的接口类
         // 配置多个包名有英文逗号隔开
-        config.setPackageFilters("com.shop.demo.controller.AdminController");
 
         // 设置错误错列表，遍历自己的错误码设置给Smart-doc即可
         List<ApiErrorCode> errorCodeList = new ArrayList<>();

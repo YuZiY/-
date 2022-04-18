@@ -15,48 +15,208 @@ api[0].list.push({
 api[0].list[0].list.push({
     order: '1',
     deprecated: 'false',
-    url: 'http://localhost:8080/admin/login',
-    desc: '登录',
+    url: 'http://10.9.5.133/admin/login',
+    desc: '通过用户名登录',
 });
 api[0].list[0].list.push({
     order: '2',
     deprecated: 'false',
-    url: 'http://localhost:8080/admin/register',
-    desc: '注册',
+    url: 'http://10.9.5.133/admin/loginByPhone',
+    desc: '通过手机号登录',
 });
 api[0].list[0].list.push({
     order: '3',
     deprecated: 'false',
-    url: 'http://localhost:8080/admin/reset',
-    desc: '重置密码',
+    url: 'http://10.9.5.133/admin/registerByName',
+    desc: '通过用户名注册',
 });
 api[0].list[0].list.push({
     order: '4',
     deprecated: 'false',
-    url: 'http://localhost:8080/admin/add',
-    desc: '添加管理员用户',
+    url: 'http://10.9.5.133/admin/registerByPhone',
+    desc: '通过手机号注册',
 });
 api[0].list[0].list.push({
     order: '5',
     deprecated: 'false',
-    url: 'http://localhost:8080/admin/update',
-    desc: '修改管理员用户',
+    url: 'http://10.9.5.133/admin/reset',
+    desc: '重置密码',
 });
 api[0].list[0].list.push({
     order: '6',
     deprecated: 'false',
-    url: 'http://localhost:8080/admin/delete/{admiId}',
-    desc: '删除管理员用户',
+    url: 'http://10.9.5.133/admin/update',
+    desc: '修改管理员用户',
 });
 api[0].list[0].list.push({
     order: '7',
     deprecated: 'false',
-    url: 'http://localhost:8080/admin/find/{admiId}',
-    desc: '通过id查找管理员用户',
+    url: 'http://10.9.5.133/admin/delete/{admiId}',
+    desc: '删除管理员用户',
+});
+api[0].list[0].list.push({
+    order: '8',
+    deprecated: 'false',
+    url: 'http://10.9.5.133/admin/find',
+    desc: '查找管理员用户id',
+});
+api[0].list.push({
+    alias: 'GoodsController',
+    order: '2',
+    link: '商品',
+    desc: '商品',
+    list: []
+})
+api[0].list[1].list.push({
+    order: '1',
+    deprecated: 'false',
+    url: 'http://10.9.5.133/goods/findGoodsByName',
+    desc: '通过名字查找',
+});
+api[0].list[1].list.push({
+    order: '2',
+    deprecated: 'false',
+    url: 'http://10.9.5.133/goods/findGoodsByType',
+    desc: '通过类型查找',
+});
+api[0].list[1].list.push({
+    order: '3',
+    deprecated: 'false',
+    url: 'http://10.9.5.133/goods/findGoodsByPrice',
+    desc: '通过价格范围',
+});
+api[0].list[1].list.push({
+    order: '4',
+    deprecated: 'false',
+    url: 'http://10.9.5.133/goods/addGoods',
+    desc: '添加',
+});
+api[0].list[1].list.push({
+    order: '5',
+    deprecated: 'false',
+    url: 'http://10.9.5.133/goods/deleteGoods/{goodId}',
+    desc: '删除',
+});
+api[0].list.push({
+    alias: 'OrderController',
+    order: '3',
+    link: '订单',
+    desc: '订单',
+    list: []
+})
+api[0].list[2].list.push({
+    order: '1',
+    deprecated: 'false',
+    url: 'http://10.9.5.133/order/addOrder',
+    desc: '从购物车中添加订单',
+});
+api[0].list[2].list.push({
+    order: '2',
+    deprecated: 'false',
+    url: 'http://10.9.5.133/order/findAllOrder',
+    desc: '查询订单',
+});
+api[0].list[2].list.push({
+    order: '3',
+    deprecated: 'false',
+    url: 'http://10.9.5.133/order/updateOrder',
+    desc: '支付方式',
+});
+api[0].list[2].list.push({
+    order: '4',
+    deprecated: 'false',
+    url: 'http://10.9.5.133/order/deleteOrder/{orderId}',
+    desc: '删除订单',
+});
+api[0].list[2].list.push({
+    order: '5',
+    deprecated: 'false',
+    url: 'http://10.9.5.133/order/updateOrderStatus',
+    desc: '修改订单状态',
+});
+api[0].list.push({
+    alias: 'ShoppingCartController',
+    order: '4',
+    link: '购物车',
+    desc: '购物车',
+    list: []
+})
+api[0].list[3].list.push({
+    order: '1',
+    deprecated: 'false',
+    url: 'http://10.9.5.133/shopping/addShoppingCart',
+    desc: '添加购物车',
+});
+api[0].list[3].list.push({
+    order: '2',
+    deprecated: 'false',
+    url: 'http://10.9.5.133/shopping/findAllShoppingCart',
+    desc: '查询购物车',
+});
+api[0].list[3].list.push({
+    order: '3',
+    deprecated: 'false',
+    url: 'http://10.9.5.133/shopping/updateShoppingCart',
+    desc: '修改购物车数量',
+});
+api[0].list[3].list.push({
+    order: '4',
+    deprecated: 'false',
+    url: 'http://10.9.5.133/shopping/deleteShoppingCart/{shoppingCartId}',
+    desc: '删除购物车',
+});
+api[0].list.push({
+    alias: 'UserController',
+    order: '5',
+    link: '用户',
+    desc: '用户',
+    list: []
+})
+api[0].list[4].list.push({
+    order: '1',
+    deprecated: 'false',
+    url: 'http://10.9.5.133/user/login',
+    desc: '登录',
+});
+api[0].list[4].list.push({
+    order: '2',
+    deprecated: 'false',
+    url: 'http://10.9.5.133/user/registerByName',
+    desc: '通过用户名注册',
+});
+api[0].list[4].list.push({
+    order: '3',
+    deprecated: 'false',
+    url: 'http://10.9.5.133/user/registerByPhone',
+    desc: '通过手机号注册',
+});
+api[0].list[4].list.push({
+    order: '4',
+    deprecated: 'false',
+    url: 'http://10.9.5.133/user/reset',
+    desc: '重置密码',
+});
+api[0].list[4].list.push({
+    order: '5',
+    deprecated: 'false',
+    url: 'http://10.9.5.133/user/updateUserById',
+    desc: '修改用户信息',
+});
+api[0].list[4].list.push({
+    order: '6',
+    deprecated: 'false',
+    url: 'http://10.9.5.133/user/findAllUser',
+    desc: '查询用户信息',
+});
+api[0].list[4].list.push({
+    order: '7',
+    deprecated: 'false',
+    url: 'http://10.9.5.133/user/deleteUserById/{userId}',
+    desc: '删除用户',
 });
 api[0].list.push({
     alias: 'error',
-    order: '2',
+    order: '6',
     link: 'error_code_list',
     desc: '错误码列表',
     list: []

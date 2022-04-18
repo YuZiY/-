@@ -27,25 +27,49 @@ public class AdminController {
     AdminMapper adminMapper;
 
     /**
-     * 登录
+     * 通过用户名登录
      * 
      * @param admin
      * @return
      */
     @PostMapping("/login")
     public List<Admin> loginAdmin(@RequestBody Admin admin) {
-        return adminMapper.login();
+        return adminMapper.loginByName(admin);
     }
 
     /**
-     * 注册
+     * 通过手机号登录
      * 
      * @param admin
      * @return
      */
-    @PostMapping("/register")
-    public List<Admin> registerAdmin(@RequestBody Admin admin) {
-        return adminMapper.register();
+    @PostMapping("/loginByPhone")
+    public List<Admin> loginAdminByPhone(@RequestBody Admin admin) {
+        return adminMapper.loginByPhone(admin);
+    }
+
+    /**
+     * 通过用户名注册
+     * 
+     * @param admin
+     * @return
+     */
+    @PostMapping("/registerByName")
+    public String registerByName(@RequestBody Admin admin) {
+        adminMapper.registerByName(admin);
+        return "success";
+    }
+
+    /**
+     * 通过手机号注册
+     * 
+     * @param admin
+     * @return
+     */
+    @PostMapping("/registerByPhone")
+    public String registerByPhone(@RequestBody Admin admin) {
+        adminMapper.registerByPhone(admin);
+        return "sucess";
     }
 
     /**
@@ -56,19 +80,8 @@ public class AdminController {
      */
     @PostMapping("/reset")
     public String resetPassword(@RequestBody Admin admin) {
+        adminMapper.resetPassword(admin);
         return "sucess";
-    }
-
-    /**
-     * 添加管理员用户
-     * 
-     * @param admin
-     * @return
-     */
-    @PostMapping("/add")
-    public String addAdimn(@RequestBody Admin admin) {
-        adminMapper.save(admin);
-        return "success";
     }
 
     /**
@@ -96,13 +109,13 @@ public class AdminController {
     }
 
     /**
-     * 通过id查找管理员用户
+     * 查找管理员用户id
      * 
      * @param admin
      * @return
      */
-    @GetMapping("/find/{admiId}")
-    public List<Admin> findAdmin(@PathVariable("admiId") int admiId) {
-        return adminMapper.findAdminById(admiId);
+    @GetMapping("/find")
+    public List<Admin> findAdmin(@RequestBody Admin admin) {
+        return adminMapper.findAdminByNameOrPhone(admin);
     }
 }
